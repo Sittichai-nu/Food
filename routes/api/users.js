@@ -1,6 +1,9 @@
 const express = require("express");
 const router = require("express").Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+// const config = require('config');
+require("dotenv").config();
 const { check, validationResult } = require('express-validator');
 const User = require('../../models/User')
 
@@ -34,7 +37,20 @@ router.post('/', [
 
             await user.save();
 
-            res.send('User signup')
+            //return jwt
+            const payload = {
+                user: {
+                    id: user.id
+                }
+            }
+            jwt.sign(
+                payload,
+                process.env.JWT_SECRET,
+                { expiresIn: 3600000000 },
+                (err, token) => {
+                    if (err) throw err;
+                    res.json({ token })
+                })
         } catch (err) {
             console.log(err.message);
             res.status(500).send('server error')
