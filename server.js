@@ -6,6 +6,11 @@ const app = express();
 
 app.get('/', (req, res) => res.send('Api runnig'));
 
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/auth', require('./routes/api/auth'))
 
