@@ -17,9 +17,9 @@ app.use('/api/auth', require('./routes/api/auth'))
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/foods", {
     useNewUrlParser: true,
-    useFindAndModify: false,
+    useCreateIndex: true,
     useUnifiedTopology: true
-}).then(() => console.log('DB Connected'));
+}).then(() => console.log('DB Connected...'));
 
 const PORT = process.env.PORT || 1000;
 
