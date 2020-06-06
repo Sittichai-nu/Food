@@ -3,20 +3,28 @@ import Navbar from './Navbar/Navbar';
 import Signup from './auth/Signup';
 import Signin from './auth/Signin'
 import Menu from './Menu/Menu'
+import { Provider } from 'react-redux';
+import store from './store';
+import Alert from './Layout/Alert'
+import './App.css'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
-      <React.Fragment>
-        <Navbar />
-        <Switch>
-          <Route path="/Signup" exact component={Signup} />
-          <Route path="/Signin" exact component={Signin} />
-          <Route path="/Menu" exact component={Menu} />
-        </Switch>
-      </React.Fragment>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <React.Fragment>
+          <Navbar />
+          <Alert />
+          <Switch>
+            <Route path="/Signup" exact component={Signup} />
+            <Route path="/Signin" exact component={Signin} />
+            <Route path="/Menu" exact component={Menu} />
+          </Switch>
+        </React.Fragment>
+      </BrowserRouter>
+    </Provider>
+
   );
 }
 
