@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-app.get('/', (req, res) => res.send('Api runnig'));
+// app.get('/', (req, res) => res.send('Api runnig'));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
