@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Navbar from './Navbar/Navbar';
 import Signup from './auth/Signup';
 import Signin from './auth/Signin'
@@ -8,8 +8,17 @@ import store from './store';
 import Alert from './Layout/Alert'
 import './App.css'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import setAuthToken from './utils/setAuthToken'
+import {loadUser} from './actions/auth'
+
+if(localStorage.token){
+  setAuthToken(localStorage.token)
+}
 
 function App() {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
   return (
     <Provider store={store}>
       <BrowserRouter>

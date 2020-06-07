@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/foods", {
     useUnifiedTopology: true
 }).then(() => console.log('DB Connected...'));
 
-const PORT = process.env.PORT || 1000;
+const PORT = process.env.PORT || 3210;
 
 app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

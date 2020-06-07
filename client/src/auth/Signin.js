@@ -1,12 +1,10 @@
 import React, { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../actions/auth'
 
-
-
-
-const Signin = () => {
-
+const Signin = ({login, isAuthenticated}) => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -19,41 +17,53 @@ const Signin = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        console.log('SUCCESS')
-
+        login({email, password});
     };
 
+    if (isAuthenticated) {
+        return <Redirect to="/Menu" />;
+      }
 
-return (
-    <Fragment>
-        <h1>Log In to Your Account</h1>
-        <form onSubmit={onSubmit}>
+    return (
+        <Fragment>
+            <h1>Log In to Your Account</h1>
+            <form onSubmit={onSubmit}>
 
-            <div className="">
-                <input
-                    type="email"
-                    placeholder="Enter Your Email Address"
-                    name="email"
-                    value={email}
-                    onChange={onChange}
-                />
-            </div>
-            <div className="">
-                <input
-                    type="password"
-                    placeholder="Create Your Password"
-                    name="password"
-                    value={password}
-                    onChange={onChange}
-                />
-            </div>
-            <input type="submit" className="" value="Login" />
-        </form>
-        <p className="">
-            Do not have an account? <Link to="/Signup">Register</Link>
-        </p>
-    </Fragment>
-)
+                <div className="">
+                    <input
+                        type="email"
+                        placeholder="Enter Your Email Address"
+                        name="email"
+                        value={email}
+                        onChange={onChange}
+                    />
+                </div>
+                <div className="">
+                    <input
+                        type="password"
+                        placeholder="Create Your Password"
+                        name="password"
+                        value={password}
+                        onChange={onChange}
+                    />
+                </div>
+                <input type="submit" className="" value="Login" />
+            </form>
+            <p className="">
+                Do not have an account? <Link to="/Signup">Register</Link>
+            </p>
+        </Fragment>
+    )
 }
 
-export default connect()(Signin);
+Signin.prototype = {
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+
+}
+
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+  });
+
+export default connect(mapStateToProps, { login })(Signin);

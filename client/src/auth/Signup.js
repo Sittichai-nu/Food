@@ -1,14 +1,15 @@
 import React, { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {setAlert} from '../actions/alert'
-import PropTypes from 'prop-types' 
+import { setAlert } from '../../actions/alert'
+import { signup } from '../../actions/auth'
+import PropTypes from 'prop-types'
 
 // import axios from 'axios';
 
 
 
-const Signup = ({setAlert}) => {
+const Signup = ({ setAlert, signup, isAuthenticated }) => {
 
     const [formData, setFormData] = useState({
         name: '',
@@ -27,26 +28,31 @@ const Signup = ({setAlert}) => {
         if (password !== password2) {
             setAlert('Password do not match', 'danger');
         } else {
-            console.log('SUCCESS')
-        //     const newUser = {
-        //         name,
-        //         email,
-        //         password
-        //     }
-        //     try {
-        //         const config={
-        //             headers:{
-        //                 'Content-Type': 'application/json'
-        //             }
-        //         }
-        //         const body = JSON.stringify(newUser);
-        //         const res = await axios.post('/api/users', body, config)
-        //         console.log(res.data);
-        //     }catch(err){
-        //         console.err(err.response.data)
-        //     }
+            signup({ name, email, password })
+            // console.log('seccess')
+            //     const newUser = {
+            //         name,
+            //         email,
+            //         password
+            //     }
+            //     try {
+            //         const config={
+            //             headers:{
+            //                 'Content-Type': 'application/json'
+            //             }
+            //         }
+            //         const body = JSON.stringify(newUser);
+            //         const res = await axios.post('/api/users', body, config)
+            //         console.log(res.data);
+            //     }catch(err){
+            //         console.err(err.response.data)
+            //     }
         }
     };
+
+    if (isAuthenticated) {
+        return <Redirect to="/Singin" />;
+      }
 
     return (
         <Fragment>
@@ -98,8 +104,14 @@ const Signup = ({setAlert}) => {
     )
 }
 
-Signup.prototype={
-    setAlert:PropTypes.func.isRequired,
+Signup.prototype = {
+    setAlert: PropTypes.func.isRequired,
+    signup: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+
 }
 
-export default connect(null,{setAlert})(Signup);
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+  });
+export default connect(mapStateToProps, { setAlert, signup })(Signup);
