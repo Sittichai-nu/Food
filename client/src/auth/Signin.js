@@ -1,8 +1,10 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../actions/auth'
+import './style.css'
+
 
 const Signin = ({login, isAuthenticated}) => {
     const [formData, setFormData] = useState({
@@ -25,8 +27,8 @@ const Signin = ({login, isAuthenticated}) => {
       }
 
     return (
-        <Fragment>
-            <h1>Log In to Your Account</h1>
+        <div className='sign'>
+            <h1>Login to Your Account</h1>
             <form onSubmit={onSubmit}>
 
                 <div className="">
@@ -52,7 +54,7 @@ const Signin = ({login, isAuthenticated}) => {
             <p className="">
                 Do not have an account? <Link to="/Signup">Register</Link>
             </p>
-        </Fragment>
+        </div>
     )
 }
 

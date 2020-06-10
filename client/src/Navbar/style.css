@@ -1,0 +1,21 @@
+.nav {
+  /* position: fixed; */
+  width: 100%;
+  background-color: rgb(195, 240, 201);
+  padding: 10px;
+}
+span{
+  margin: 10px;
+}
+.signs{
+  text-align: end;
+  margin-right: 10%;
+  padding: 2%;
+  margin-top: -5%;
+
+}
+
+.eat{
+  margin-left: 10%;
+
+}

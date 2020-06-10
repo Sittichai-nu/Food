@@ -1,9 +1,10 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setAlert } from '../actions/alert'
 import { signup } from '../actions/auth'
 import PropTypes from 'prop-types'
+import './style.css'
 
 // import axios from 'axios';
 
@@ -55,7 +56,7 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
       }
 
     return (
-        <Fragment>
+        <div className='sign'>
             <h1>Create Your Account</h1>
             <form onSubmit={onSubmit}>
                 <div className="">
@@ -100,7 +101,7 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
             <p className="">
                 Already have an account? <Link to="/signin">Sign In</Link>
             </p>
-        </Fragment>
+        </div>
     )
 }
 

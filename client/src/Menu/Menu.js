@@ -1,9 +1,12 @@
 import React from 'react'
 import Index from './index'
+import FoodDialog from './FoodDialog'
+import './style.css'
 
 const Menu = () => {
     return (
-        <div>
+        <div className="menu">
+            <FoodDialog/>
             <Index/>
         </div>
     )
