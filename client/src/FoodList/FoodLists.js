@@ -5,140 +5,140 @@ export function formatPrice(price) {
     });
 }
 
-export const foodItems = [
+const foodItems = [
     {
-        name: "Cheese Rolls",
+        itemName: "Cheese Rolls",
         section: "Appetizers",
         price: 3.75
     },
     {
-        name: "Crispy Rolls",
+        itemName: "Crispy Rolls",
         section: "Appetizers",
         price: 3.75
     },
     {
-        name: "Chicken Satay",
+        itemName: "Chicken Satay",
         section: "Appetizers",
         price: 6.75
     },
     {
-        name: "Fish Cake ",
+        itemName: "Fish Cake ",
         section: "Appetizers",
         price: 7.75
     },
     {
-        name: "Sausages",
+        itemName: "Sausages",
         section: "Appetizers",
         price: 5.75
     },
     {
-        name: "Grilled Beef balls",
+        itemName: "Grilled Beef balls",
         section: "Appetizers",
         price: 5.75
     },
     {
-        name: "Fried Tofu",
+        itemName: "Fried Tofu",
         section: "Appetizers",
         price: 4.75
     },
     {
-        name: "Pad Thai",
-        section: "Nooddle",
-        price: 10.95
-    },
-     {
-        name: "Drunken Noodle",
+        itemName: "Pad Thai",
         section: "Nooddle",
         price: 10.95
     },
     {
-        name: "Pad Woonsen",
+        itemName: "Drunken Noodle",
         section: "Nooddle",
         price: 10.95
     },
     {
-        name: "Pad See Ew",
+        itemName: "Pad Woonsen",
         section: "Nooddle",
         price: 10.95
     },
     {
-        name: "Stir fried Basil",
+        itemName: "Pad See Ew",
+        section: "Nooddle",
+        price: 10.95
+    },
+    {
+        itemName: "Stir fried Basil",
         section: "Rice Dish",
         price: 10.95
     },
     {
-        name: "Stir Fried Gralic",
+        itemName: "Stir Fried Gralic",
         section: "Rice Dish",
         price: 10.95
     },
     {
-        name: "Stir fried Green Bean",
+        itemName: "Stir fried Green Bean",
         section: "Rice Dish",
         price: 10.95
     },
     {
-        name: "Sweet & Sour",
+        itemName: "Sweet & Sour",
         section: "Rice Dish",
         price: 10.95
     },
     {
-        name: "Peanut Sauce",
+        itemName: "Peanut Sauce",
         section: "Rice Dish",
         price: 10.95
     },
     {
-        name: "Stir fried Cashew",
+        itemName: "Stir fried Cashew",
         section: "Rice Dish",
         price: 10.95
     },
     {
-        name: "Tom Yum",
+        itemName: "Tom Yum",
         section: "Soups",
         price: 9.95
     },
     {
-        name: "Tom Kha",
+        itemName: "Tom Kha",
         section: "Soups",
         price: 9.95
     },
     {
-        name: "Beef Noodle Soup",
+        itemName: "Beef Noodle Soup",
         section: "Soups",
         price: 9.95
     },
     {
-        name: "Papaya salad",
+        itemName: "Papaya salad",
         section: "Salad",
         price: 9.95
     },
     {
-        name: "Fish salad",
+        itemName: "Fish salad",
         section: "Salad",
         price: 9.95
     },
     {
-        name: "Clear Noodle salad",
+        itemName: "Clear Noodle salad",
         section: "Salad",
         price: 9.95
     },
     {
         img: "/img/wt.jpg",
-        name: "Won Ton",
+        itemName: "Won Ton",
         section: "Soups",
         price: 9.95
     },
     {
-        name: "Sweet Rice Mango",
+        itemName: "Sweet Rice Mango",
         section: "Desserts",
         price: 5.95
     },
     {
-        name: "Coconut Ice Cream",
+        itemName: "Coconut Ice Cream",
         section: "Desserts",
         price: 5.95
     },
     {
-        name: "Thai Custard",
+        itemName: "Thai Custard",
         section: "Desserts",
         price: 5.95
     }

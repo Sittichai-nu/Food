@@ -1,11 +1,13 @@
 import React from 'react'
+import Index from './index'
 
 const Menu = () => {
     return (
         <div>
-            menu
+            <Index/>
         </div>
     )
 }
 
-export default Menu;
+export default Menu
+
