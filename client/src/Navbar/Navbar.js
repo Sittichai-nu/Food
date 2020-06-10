@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
@@ -10,7 +10,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
         <div>
             <span><Link to='/menu'>Menu</Link></span>
-            <span><Link to='/kitchen'>Kitchen</Link></span>
+            <span><Link to='/Kitchen'>Kitchen</Link></span>
 
             <span><a onClick={logout} href='#!'>{' '}Logout</a></span>
         </div>
@@ -24,14 +24,16 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     );
 
     return (
-        <nav className="nav">
-            <div>
-                <h1 className='eat' ><Link to='/'>EatSina</Link></h1>
-                {!loading && (
-                    <div className='signs'>{isAuthenticated ? authLinks : guestLinks}</div>
-                )}
-            </div>
-        </nav>
+        <>
+            <nav className="nav">
+                <div>
+                    <h1 className='eat' ><Link to='/'>EatSina</Link></h1>
+                    {!loading && (
+                        <div className='signs'>{isAuthenticated ? authLinks : guestLinks}</div>
+                    )}
+                </div>
+            </nav>
+        </>
     )
 }
 Navbar.propTypes = {

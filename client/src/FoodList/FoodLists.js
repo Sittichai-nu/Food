@@ -72,7 +72,7 @@ const foodItems = [
         price: 10.95
     },
     {
-        itemName: "Stir fried Green Bean",
+        itemName: "Stir fried Beans",
         section: "Rice Dish",
         price: 10.95
     },

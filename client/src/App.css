@@ -40,4 +40,11 @@ body{
   width: 99%;
   margin: 0 auto;
   height: 100%;
+  font-weight: bolder;
+  background-image: url('./Menu/imgs/thaifoods.jpg');
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Righteous', cursive;
+  
 }
