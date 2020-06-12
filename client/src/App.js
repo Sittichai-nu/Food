@@ -31,7 +31,6 @@ function App() {
             <Route path="/Signin" exact component={Signin} />
             <Route path="/Menu" exact component={Menu} />
             <Route path="/Kitchen" exact component={Kitchen} />
-
           </Switch>
         </BrowserRouter>
       </Provider>
