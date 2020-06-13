@@ -1,10 +1,14 @@
 import React from 'react'
 import { formatPrice } from '../FoodList/FoodLists'
 import { getPrice } from './FoodDialog'
-// import { orderAction } from '../actions/order'
+import { addOrder } from '../actions/order'
+import { connect } from 'react-redux';
 
 
-function Order({ orders, setOrders, isAuthenticated }) {
+
+
+
+function Order({ orders, setOrders, setKitchen }) {
     const subtotal = orders.reduce((total, order) => {
         return total + getPrice(order);
     }, 0);
@@ -20,15 +24,21 @@ function Order({ orders, setOrders, isAuthenticated }) {
         const newOrders = [...orders];
         newOrders.splice(index);
         setOrders(newOrders);
-        alert('Your order is processing...')
 
-    
     };
 
-  
+    // const [kitchen, setKitchen] = useState({
 
+    // })
+    function send(order) {
+        console.log(order)
+       
+    }
 
-
+    const kitchen = {
+        ...orders
+        
+    }
     return (
         <div className='order'>
             {
@@ -46,7 +56,7 @@ function Order({ orders, setOrders, isAuthenticated }) {
                                 Your Orders:
                             </div>
                             {""}
-                            {orders.map((order, index) => (
+                            {orders.map((order, index,) => (
                                 <div className='orderContainer'>
                                     <div className='orderItem'>
                                         <div>{order.quantity}</div>
@@ -55,7 +65,7 @@ function Order({ orders, setOrders, isAuthenticated }) {
                                         <div>{formatPrice(getPrice(order))}</div>
                                     </div>
                                     <div className='removeButton' onClick={() => { deleteItem(index) }}>
-                                        Remove Order
+                                        <div onClick={send(order)} >Remove Order</div>
                                     </div>
                                 </div>
                             ))}
@@ -80,13 +90,14 @@ function Order({ orders, setOrders, isAuthenticated }) {
                     )
             }
             <div className='footer '>
-                <div  className='confirmButton' onClick={deleteOrders}>
-                    Place Your Orders
-                 </div>
+                <div className='confirmButton' color='Your orders is processing' onClick={deleteOrders} >
+                    <div >Place Your Orders</div>
+                </div>
             </div>
         </div>
     )
 }
 
-export default Order
+
+export default connect(addOrder)(Order)
 

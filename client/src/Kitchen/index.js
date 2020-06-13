@@ -15,6 +15,7 @@ function Index() {
                         <tr>
                             <th>Orders</th>
                             <th>Quantity</th>
+                            <th>Price</th>
                             <th>Name</th>
                             <th>Date</th>
                         </tr>

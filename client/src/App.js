@@ -12,6 +12,7 @@ import setAuthToken from './utils/setAuthToken'
 import { loadUser } from './actions/auth'
 import Kitchen from './Kitchen/Kitchen';
 
+
 if (localStorage.token) {
   setAuthToken(localStorage.token)
 }

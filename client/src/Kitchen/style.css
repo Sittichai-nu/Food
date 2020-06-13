@@ -1,8 +1,11 @@
 .kitchen{
     text-align: center;
+    color: aliceblue;
 
 }
 .table{
     text-align: center;
     margin: auto;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
 }
