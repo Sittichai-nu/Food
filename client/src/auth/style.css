@@ -29,6 +29,7 @@ input{
 
 }
 .account{
+    color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: bolder;
     font-family: 'Righteous';
