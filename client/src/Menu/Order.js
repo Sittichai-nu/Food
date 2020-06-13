@@ -1,10 +1,10 @@
 import React from 'react'
-// import order from '../Reducers/order'
 import { formatPrice } from '../FoodList/FoodLists'
 import { getPrice } from './FoodDialog'
+// import { orderAction } from '../actions/order'
 
 
-function Order({ orders, setOrders }) {
+function Order({ orders, setOrders, isAuthenticated }) {
     const subtotal = orders.reduce((total, order) => {
         return total + getPrice(order);
     }, 0);
@@ -16,6 +16,18 @@ function Order({ orders, setOrders }) {
         newOrders.splice(index, 1);
         setOrders(newOrders);
     };
+    const deleteOrders = index => {
+        const newOrders = [...orders];
+        newOrders.splice(index);
+        setOrders(newOrders);
+        alert('Your order is processing...')
+
+    
+    };
+
+  
+
+
 
     return (
         <div className='order'>
@@ -47,19 +59,19 @@ function Order({ orders, setOrders }) {
                                     </div>
                                 </div>
                             ))}
-                            <div className='orderContainer'> 
+                            <div className='orderContainer'>
                                 <div className='orderItem'>
-                                    <div/>
+                                    <div />
                                     <div>Sub-Total</div>
                                     <div>{formatPrice(subtotal)}</div>
                                 </div>
                                 <div className='orderItem'>
-                                    <div/>
+                                    <div />
                                     <div>Tax</div>
                                     <div>{formatPrice(tax)}</div>
                                 </div>
                                 <div className='orderItem'>
-                                    <div/>
+                                    <div />
                                     <div>Total</div>
                                     <div>{formatPrice(total)}</div>
                                 </div>
@@ -68,7 +80,7 @@ function Order({ orders, setOrders }) {
                     )
             }
             <div className='footer '>
-                <div className='confirmButton' >
+                <div  className='confirmButton' onClick={deleteOrders}>
                     Place Your Orders
                  </div>
             </div>
@@ -77,3 +89,4 @@ function Order({ orders, setOrders }) {
 }
 
 export default Order
+

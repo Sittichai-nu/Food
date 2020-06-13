@@ -6,7 +6,7 @@ import { login } from '../actions/auth'
 import './style.css'
 
 
-const Signin = ({login, isAuthenticated}) => {
+const Signin = ({ login, isAuthenticated }) => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -19,19 +19,19 @@ const Signin = ({login, isAuthenticated}) => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        login({email, password});
+        login({ email, password });
     };
 
     if (isAuthenticated) {
         return <Redirect to="/Menu" />;
-      }
+    }
 
     return (
         <div className='sign'>
             <h1>Login to Your Account</h1>
-            <form onSubmit={onSubmit}>
+            <form className='' onSubmit={onSubmit}>
 
-                <div className="">
+                <div >
                     <input
                         type="email"
                         placeholder="Enter Your Email Address"
@@ -40,18 +40,19 @@ const Signin = ({login, isAuthenticated}) => {
                         onChange={onChange}
                     />
                 </div>
-                <div className="">
+                <div >
                     <input
+                        
                         type="password"
-                        placeholder="Create Your Password"
+                        placeholder="Enter Your Password"
                         name="password"
                         value={password}
                         onChange={onChange}
                     />
                 </div>
-                <input type="submit" className="" value="Login" />
+                <input type="submit" className="submit" value="Login" />
             </form>
-            <p className="">
+            <p className="account">
                 Do not have an account? <Link to="/Signup">Register</Link>
             </p>
         </div>
@@ -66,6 +67,6 @@ Signin.prototype = {
 
 const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated
-  });
+});
 
 export default connect(mapStateToProps, { login })(Signin);

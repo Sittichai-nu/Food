@@ -1,5 +1,5 @@
 import { GET_ORDERS, ADD_ORDER, DELETE_ORDER, ORDERS_LOADING } from './types'
-import axios from "./node_modules/axios";
+import axios from "axios";
 
 export const getOder = () => dispathch => {
     axios.get('/api/order')

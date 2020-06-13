@@ -27,7 +27,7 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
     const onSubmit = async e => {
         e.preventDefault();
         if (password !== password2) {
-            setAlert('Password do not match', 'danger');
+            setAlert('Password do not match');
         } else {
             signup({ name, email, password })
             // console.log('seccess')
@@ -52,14 +52,14 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
     };
 
     if (isAuthenticated) {
-        return <Redirect to="/Singin" />;
+        return <Redirect to="/menu" />;
       }
 
     return (
         <div className='sign'>
             <h1>Create Your Account</h1>
-            <form onSubmit={onSubmit}>
-                <div className="">
+            <form className='' onSubmit={onSubmit}>
+                <div className="form">
                     <input
                         type="text"
                         placeholder="Enter Your Name"
@@ -68,7 +68,7 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
                         onChange={onChange}
                     />
                 </div>
-                <div className="">
+                <div className="form">
                     <input
                         type="email"
                         placeholder="Enter Your Email Address"
@@ -77,7 +77,7 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
                         onChange={onChange}
                     />
                 </div>
-                <div className="">
+                <div className="form">
                     <input
                         type="password"
                         placeholder="Create Your Password"
@@ -86,7 +86,7 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
                         onChange={onChange}
                     />
                 </div>
-                <div className="">
+                <div className="form">
                     <input
                         type="password"
                         placeholder="Confirm Password"
@@ -96,9 +96,9 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
 
                     />
                 </div>
-                <input type="submit" className="" value="Register" />
+                <input type="submit" className="submit" value="Register" />
             </form>
-            <p className="">
+            <p className="account">
                 Already have an account? <Link to="/signin">Sign In</Link>
             </p>
         </div>

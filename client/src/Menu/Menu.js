@@ -12,6 +12,7 @@ const Menu = () => {
     const openFood = useOpenfood();
     const orders = useOrders();
     // const kitchen = useKitchen();
+   
     useTitle({...openFood, ...orders})
 
     return (
@@ -20,7 +21,6 @@ const Menu = () => {
                 <Index {...openFood} />
                 <FoodDialog {...openFood}  {...orders} />
                 <Order {...orders} />
-
             </div>
         </>
     )

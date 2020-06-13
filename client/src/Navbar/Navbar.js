@@ -12,7 +12,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             <span><Link to='/menu'>Menu</Link></span>
             <span><Link to='/Kitchen'>Kitchen</Link></span>
 
-            <span><a onClick={logout} href='#!'>{' '}Logout</a></span>
+            <span><a onClick={logout} href='/'>{' '}Logout</a></span>
         </div>
     );
 

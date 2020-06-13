@@ -30,11 +30,11 @@ function FoodDialog({ openFood, setOpenfood, setOrders, orders }) {
             <div className=''>
                 <div className='shadow' onClick={Close}></div>
                 <div className='dialog'>
-                    <div className='dialogBanner'>{openFood.itemName}
+                    <div className='dialogBanner label '>{openFood.itemName}
                     </div>
                     <div className='footer '>
                         <div className='confirmButton' onClick={addOrder}>
-                        Add Your Orders: {formatPrice(getPrice(order))}
+                        Add Your Order: {formatPrice(getPrice(order))}
                         </div>
                     </div>
                 </div>

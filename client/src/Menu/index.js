@@ -6,7 +6,7 @@ const index = ({ setOpenfood }) => {
     return (
         <>
             <div className='index-container'>
-                <h1>MENU</h1>
+                <h1 className='menus'>MENU</h1>
                 {Object.entries(foods).map(([sectionName, foods]) => (
                     <>
                         <h2 className='sectionName'>{sectionName}</h2>

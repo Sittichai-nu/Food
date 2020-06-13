@@ -1,4 +1,36 @@
 .sign{
     position: relative;
     text-align: center;
+    padding: 75px;
+}
+input{
+    font-size: 20px;
+    text-align: center;
+    border-radius: 9px;
+    border: 1px solid rgb(82, 80, 80);
+    padding: 10px;
+    width: 40%;
+    margin: 5px;
+
+
+
+}
+.submit{
+    margin-top: 5px;
+    width: 100px;
+    padding: 10px;
+    border: 3px solid rgb(192, 211, 168);
+    background-color: rgb(176, 250, 115);
+    border-radius: 7px;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Righteous';
+
+
+}
+.account{
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Righteous';
+
 }
